@@ -40,7 +40,6 @@ RUN add-apt-repository ppa:c2d4u.team/c2d4u4.0+ \
     r-cran-agricolae \
     r-cran-agridat \
     r-cran-algdesign \
-    r-cran-animation \
     r-cran-arrangements \
     r-cran-ash \
     r-cran-askpass \
@@ -178,6 +177,7 @@ RUN add-apt-repository ppa:c2d4u.team/c2d4u4.0+ \
     r-cran-htmlwidgets \
     r-cran-httpuv \
     r-cran-httr \
+    r-cran-hunspell \
     r-cran-hydrogof \
     r-cran-hydrotsm \
     r-cran-imputets \
@@ -185,6 +185,8 @@ RUN add-apt-repository ppa:c2d4u.team/c2d4u4.0+ \
     r-cran-insight \
     r-cran-intervals \
     r-cran-isoband \
+    r-cran-janeaustenr \
+    r-cran-janitor \
     r-cran-jpeg \
     r-cran-jquerylib \
     r-cran-jsonlite \
@@ -313,6 +315,8 @@ RUN add-apt-repository ppa:c2d4u.team/c2d4u4.0+ \
     r-cran-shinythemes \
     r-cran-sjlabelled \
     r-cran-sjmisc \
+    r-cran-snakecase \
+    r-cran-snowballc \
     r-cran-sodium \
     r-cran-sourcetools \
     r-cran-sp \
@@ -334,7 +338,9 @@ RUN add-apt-repository ppa:c2d4u.team/c2d4u4.0+ \
     r-cran-tibble \
     r-cran-tidyr \
     r-cran-tidyselect \
+    r-cran-tidytext \
     r-cran-timedate \
+    r-cran-tokenizers \
     r-cran-trend \
     r-cran-tseries \
     r-cran-ttr \
@@ -367,8 +373,8 @@ RUN add-apt-repository ppa:c2d4u.team/c2d4u4.0+ \
 COPY install_packages.R .
 RUN Rscript ./install_packages.R
 
-RUN useradd rinstat
-WORKDIR /RInstat
+RUN useradd -m rinstat
 COPY --chown=rinstat:rinstat RInstat /RInstat
-# USER rinstat
+WORKDIR /RInstat
+USER rinstat
 CMD [ "mono", "instat.exe" ]
