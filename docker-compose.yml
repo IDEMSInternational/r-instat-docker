@@ -2,7 +2,7 @@ version: "3.8"
 services:
   rinstat:
     # build: .
-    image: istride/r-instat:0.1.0
+    image: istride/r-instat:0.2.0
     environment:
       DISPLAY: ${DISPLAY}
     volumes:
