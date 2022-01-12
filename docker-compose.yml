@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3.7"
 services:
   rinstat:
     # build: .
@@ -8,6 +8,7 @@ services:
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - ~/.Xauthority:/home/rinstat/.Xauthority
+      - ~/Desktop:/home/rinstat/Desktop
     network_mode: host
     command:
       - mono
