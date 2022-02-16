@@ -11,7 +11,7 @@ This repository provides a way to run R-Instat in a Docker container.
 
 Run the following command in a terminal, in the project root directory.
 ```
-docker compose up
+docker-compose up
 ```
 
 # Development
